@@ -18,7 +18,7 @@ class ArticleController extends Controller
 
     public function __construct()
     {
-        $this->authorizeResource(Article::class, 'articles');
+        $this->authorizeResource(Article::class, 'article');
     }
 
     /**
@@ -26,7 +26,7 @@ class ArticleController extends Controller
      */
     public function index(): View
     {
-        $articles = Article::with(['user', 'tags'])->latest()->simplePaginate();
+        $articles = Article::with(['user', 'tags'])->latest()->simplePaginate(3);
 
         $this->authorize('viewAny', Article::class);
 

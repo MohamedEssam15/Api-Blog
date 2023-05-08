@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Models\Article;
+use \App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
